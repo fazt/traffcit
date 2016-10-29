@@ -1,0 +1,28 @@
+{{#compress}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trafcityjs</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    {{!-- fuente source sans pro --}}
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body>
+
+    {{> site/header}}
+
+    <div class="container">
+      {{{ body }}}
+    </div>
+
+    {{> site/footer }}
+
+    {{>development/livereload}}
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>
+{{/compress}}

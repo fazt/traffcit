@@ -1,0 +1,133 @@
+
+.framemail {
+    cursor: default;
+
+  .window {
+      font-size: 0;
+      margin-top: -1px;
+      overflow: hidden;
+      margin-left: -18px;
+
+    .mail li {
+        background-color:#3d3d3d;
+        background-image: -webkit-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.05));
+        background-image:    -moz-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.05));
+        background-image:     -ms-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.05));
+        background-image:      -o-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.05));
+        background-image:         linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.05));
+        border-top: 1px solid #888;
+        position: relative;
+        margin-left:-18px;
+        &:first-child {
+            border-top: none;
+        }
+        &:hover{
+           background-color: #5d5b5b;
+        }
+        &:before{
+          border-left: 8px solid transparent;
+          border-top: 8px solid #df6;
+          content: '';
+          height: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 0;
+        }
+    }
+  }
+}
+// .framemail
+// .framemail .window
+// .framemail .window .mail li:
+// }
+// .framemail .window .mail li:hover {
+
+// }
+.framemail .window .mail li:after,
+.framemail .window .mail li:before {
+    border-left: 8px solid transparent;
+    border-top: 8px solid #df6;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+}
+.framemail .window .mail li:before {
+    border-top-color: #bbb;
+    border-width: 9px;
+}
+.framemail .window .mail li:nth-child(1):after,
+.framemail .window .mail li:nth-child(1):before {
+    border: none;
+}
+.framemail .window .mail li:nth-child(2):after {
+    border-top-color: #fa1d2d;
+}
+.framemail .window .mail li i {
+    display: inline-block;
+    height: 48px;
+    width: 6px;
+}
+.framemail .window .mail li .read {
+    background-color: #ddd;
+}
+.framemail .window .mail li .unread {
+    background: #b2c831;
+}
+.framemail .window .mail li img {
+    background: #819da2;
+    border-radius: 2px;
+    height: 36px;
+    left: 12px;
+    position: absolute;
+    top: 6px;
+    width: 36px;
+}
+.framemail .window .mail li p {
+    font: 13px/24px sans-serif;
+    left: 56px;
+    position: absolute;
+    top: 3px;
+}
+.framemail .window .mail li .sender {
+    color: #e9e8e8;
+    font-weight: bold;
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.5);
+}
+.framemail .window .mail li .message {
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    top: 21px;
+    white-space: nowrap;
+}
+.framemail .window .mail li .message strong {
+    color: #999;
+}
+.framemail .window .mail li .actions {
+    height: 16px;
+    position: absolute;
+    right: 19px;
+    text-align: right;
+    top: 0;
+    width: 96px;
+}
+.framemail .window .mail li .actions img {
+    background: none;
+    display: inline-block;
+    height: 16px;
+    margin-left: 6px;
+    opacity: .1;
+    position: relative;
+    width: 16px;
+}
+.framemail .window .mail li:hover .actions img {
+    opacity: .25;
+}
+.framemail .window .mail li .actions img:hover {
+    opacity: .75;
+}
+//

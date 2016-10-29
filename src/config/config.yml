@@ -1,0 +1,36 @@
+---
+production: &default
+  serverPort: 3000
+  baseUrl: http://www.trafcity.io
+  site:
+    description: test
+  views:
+    engine: .hbs
+    extension: .hbs
+    layout: dashboard
+  html:
+    livereload: false
+    minify: true
+    css:
+      lessPrecompile: true
+      compress: true
+  languages:
+    default: en
+    list: [en,es]
+
+stage: &stage
+  <<: *default
+  baseUrl: http://stage.trafcity.io
+
+latest: &latest
+  <<: *stage
+  baseUrl: http://latest.trafcity.io
+
+development:
+  <<: *latest
+  baseUrl: http://local.trafcity.io
+  html:
+    livereload: true
+    minify: false
+    lessPrecompile: false
+    compress: false

@@ -1,0 +1,36 @@
+{{#section 'head'}}
+  <link href="/css/login.css" rel="stylesheet">
+{{/section}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-4 col-lg-4" style="margin-top:100px">
+      <div class="block-unit" style="text-align:center; padding:8px 8px 8px 8px;">
+        <img src="/img/face80x80.jpg" alt="" class="img-circle">
+        <br>
+        <br>
+        <form class="cmxform" id="" method="post" action="">
+          <fieldset>
+            {{#if hasErrors}}
+                <div class="alert alert-danger">
+                  {{#each messages}}
+                    <p>{{this}}</p>
+                  {{/each}}
+                </div>
+            {{/if}}
+              <div class="form-group">
+                <input name="email" id="username" name="username" placeholder="Username" class="form-control">
+              </div>
+              <div class="form-group">
+                <input name="password" id="password" name="password" type="password" placeholder="Password" class="form-control">
+              </div>
+              <!-- token -->
+              <input type="hidden" name="_csrf" value="{{csrfToken}}"/>
+
+            <input class="submit btn-success btn btn-large" type="submit" value="Login">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

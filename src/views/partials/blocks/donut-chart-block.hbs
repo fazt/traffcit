@@ -1,0 +1,30 @@
+<div class="dash-unit">
+  <dtitle>Disk Space</dtitle>
+  <hr>
+  <canvas id="space"></canvas>
+  <h2>{{diskSpace.free}}%</h2>
+</div>
+
+<script>
+$(document).ready(function() {
+  var donutInfo = document.getElementById('space').getContext('2d');
+  var info = new Chart(donutInfo,{
+    type:'doughnut',
+    data:{
+      labels: ["Available", "Free", "Total"],
+      datasets: [{
+        backgroundColor: [
+          "#e74c3c",
+          "#2ecc71",
+          "#3498db"
+        ],
+        data: [{{diskSpace.available}},{{diskSpace.free}},{{diskSpace.total}}]
+      }]
+    },
+    options:{
+      legend:false,
+      responsive:true
+    }
+  });
+});
+</script>

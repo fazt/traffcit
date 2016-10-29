@@ -1,0 +1,38 @@
+{
+  "name": "semaforosjs",
+  "description": "a basic IOT application with javascript",
+  "main": "app.js",
+  "authors": [
+    "Fabian Napa"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "express",
+    "javascript",
+    "semaforos",
+    "español"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/public/bower_components",
+    "test",
+    "tests"
+  ],
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    }
+  },
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}

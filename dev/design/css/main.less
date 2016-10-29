@@ -1,0 +1,246 @@
+@import "directives/variables.less";
+
+@import "directives/general.less";
+@import "directives/custom.less";
+
+/***********BLOCKS & WRAPS***********/
+/*--- Dash Unit / Used in Dashboard page ---*/
+@import "directives/blocks.less";
+
+/**********Half-Unit / Used in index.html**********/
+@import "directives/halfunit.less";
+
+/**********Styling Elements**********/
+@import "directives/styling_elements.less";
+
+ /***********Bootstrap Default Modifications***********/
+
+@import "directives/bootstrap-modifications.less";
+
+
+/**********Clock Configuration**********/
+@import "directives/digiclock.less";
+
+/**********Mail Style Configuration**********/
+@import "directives/mail.less";
+
+
+/**********DONUT CHARTS STYLES**********/
+@import "directives/donut.less";
+
+/**********LINE AND BARS**********/
+
+.section-graph {
+  position: relative;
+  height: 130px;
+  color: black;
+  background-image: linear-gradient(color-stops(#b2c831, #b2c831 50%, #b2c831 50%));
+  margin-bottom:20px;
+}
+.section-graph .graph-info {
+  z-index: 99;
+  position: absolute;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-left: 21px;
+  width: 100px;
+}
+// .section-graph .graph-info .graph-arrow {
+//   width: 0;
+//   height: 0;
+//   margin-top: 18px;
+//   border-left: 4px solid transparent;
+//   border-right: 4px solid transparent;
+//   border-bottom: 4px solid white;
+//   float: left;
+// }
+// .section-graph .graph-info .graph-info-big {
+//   font-size: 24px;
+//   float: left;
+//   margin-left: 3px;
+// }
+// .section-graph .graph-info .graph-info-small {
+//   margin-left: 3px;
+//   font-size: 12px;
+//   font-weight: normal;
+//   color: rgba(255, 255, 255, 0.5);
+//   clear: left;
+//   margin-left: 8px;
+// }
+/*
+ * Info Section
+ */
+// .info-aapl {
+//   text-align: center;
+//
+// }
+// .info-aapl ul {
+//   margin-left:30%;
+//
+// }
+// .info-aapl li {
+//   margin: 0;
+//   display: block;
+//   width: 9px;
+//   height: 40px;
+//   margin-right: 6px;
+//   background-color: #f5f0ec;
+//   float:left;
+//   position: relative;
+// }
+// .info-aapl li span {
+//   display: block;
+//   width: 9px;
+//   height: 40px;
+//   position: absolute;
+//   bottom: 0;
+// }
+// .info-aapl li span.orange {
+//   background-color: #fa1d2d;
+// }
+// .info-aapl li span.green {
+//   background-color: #b2c831;
+// }
+//
+// /**********TWITTER WIDGET **********/
+// #jstwitter ul li{
+// 	color:#bdbdbd;
+// 	padding:.5em .75em;
+// }
+//
+// #jstwitter ul{
+// 	margin-left:0;
+// 	list-style:none
+// }
+//
+// #jstwitter:first-child{
+// 	border-top:0
+// }
+//
+// ul#jstwitter li a{
+// 	font-size:10px;
+// 	font-style:italic;
+// 	color:#666;
+// 	text-decoration:none
+// }
+//
+/********** CUSTOMIZED BUTTON **********/
+@import "directives/customized-buttons.less";
+
+/********** SWITCH BUTTON **********/
+@import "directives/switch.less";
+
+// /**********Gauge Chart**********/
+#canvas {
+	display: block;
+	width: 150px;
+	margin: 30px auto;
+}
+
+/**********Accordion Styling**********/
+//
+// .accordion-group {
+// 	border: 1px solid #222;
+// }
+// .accordion-heading {
+//   background-color: #5a5a5a;
+//   *background-color: #5a5a5a;
+//     background-repeat: repeat-x;
+//   *-webkit-border-radius: 4px;
+//      -moz-border-radius: 4px;
+//           border-radius: 4px;
+//     zoom: 1;
+// 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+// 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+// 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+// 	background-image: linear-gradient(to bottom, #707070, #707070);
+// }
+// //
+// // /**********Link Styling**********/
+// a {
+//   color: #b2c831;
+//   text-decoration: none;
+// }
+//
+// a:hover {
+//   color: #dff948;
+//   text-decoration: none;
+// }
+// //
+/**********FooterWrap Section**********/
+@import "directives/footer_wrap";
+
+
+/***********FULLCALENDAR STYLE***********/
+//
+// #external-events {
+// 	padding: 0 10px;
+// 	border: 1px solid #8b8b8a;
+// 	  background-color: #8b8b8a;
+// 	  -webkit-border-radius: 4px;
+// 	     -moz-border-radius: 4px;
+// 	          border-radius: 4px;
+// 	text-align: left;
+// 	}
+//
+// #external-events h4 {
+// 	font-size: 16px;
+// 	margin-top: 0;
+// 	padding-top: 1em;
+// 	}
+//
+// .external-event { /* try to mimick the look of a real event */
+// 	margin: 10px 0;
+// 	padding: 2px 4px;
+// 	background: #b2c831;
+// 	color: #fff;
+// 	font-size: .85em;
+// 	cursor: pointer;
+// 	}
+//
+// #external-events p {
+// 	margin: 1.5em 0;
+// 	font-size: 11px;
+// 	color: #b2c831;
+// 	}
+//
+// #external-events p input {
+// 	margin: 0;
+// 	vertical-align: middle;
+// 	}
+//
+// #calendar {
+// 	width:100%;
+// 	}
+//
+//
+/**********Media Styles**********/
+//
+// @media (max-width: 360px){
+// /*Calendar Adsjustments*/
+// .fc-header {margin-top:15px;}
+// .fc-header-title h2{font-size:10px; }
+// .fc-header-right {display:none}
+//
+// /* portrait tablet */
+// @media (min-width: 767px) and (max-width: 768px) {
+// 	.info-aapl ul {
+//   		margin-left:10px;
+//   		float:left;
+// }
+//
+// #load {
+// 	margin-left:5px;
+// 	margin-right:10px;
+// }
+//
+// #space {
+// 	margin-left:5px;
+// 	margin-right:10px;
+// }
+//
+//
+// @media (min-width: 560px) and (max-width: 685px) {
+// 	.info-aapl ul {
+//   		margin-left: 40%;
+// }
