@@ -12,6 +12,8 @@
     <link href="/css/home.css" rel="stylesheet">
     <link href="/css/font-style.css" rel="stylesheet">
     <link href="/css/flexslider.css" rel="stylesheet">
+    <link href="/css/alertify.min.css" rel="stylesheet">
+    <link href="/css/themes/default.css" rel="stylesheet">
 
 
     {{!-- <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script> --}}
@@ -48,7 +50,11 @@
     <div class="container">
 	     {{{body}}}
     </div>
-
+    <script>
+      $(function() {
+        alertify.alert('Ready!');
+      });
+    </script>
     {{> site/footer_script}}
     {{> development/livereload}}
   </html>

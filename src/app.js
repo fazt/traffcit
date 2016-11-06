@@ -118,7 +118,7 @@ app.use(function(req,res,next) {
 
 app.use('/user',userRoutes);
 app.use('/',routes);
-app.use('/three',devRoutes);
+app.use('/dev',devRoutes);
 
 //inicializacion
 server.listen(app.get('port'),() => {
