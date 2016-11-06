@@ -1,3 +1,6 @@
+#Dependencias para el Desarrollo
+- gulp : ``` npm install -g gulp```
+
 # Development Configurations
 - http://www.eslint.org/docs/configuring/
 - https://github.com/visionmedia/supertest

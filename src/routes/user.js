@@ -43,6 +43,7 @@ router.get('/signin',(req,res,next)=>{
   res.render('user/signin',{csrfToken:req.csrfToken(),messages:messages,hasErrors:messages.length>0});
 });
 
+// curl -X POST -d {""}
 router.post('/signin',passport.authenticate('local.signin',{
   successRedirect: '/user/dashboard',
   failureRedirect: '/user/signin',

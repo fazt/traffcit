@@ -3,16 +3,17 @@
   <dtitle>User Profile</dtitle>
   <hr>
   <div class="thumbnail">
-    <img src="/img/face80x80.jpg" alt="username" class="img-circle">
+    <!--  http://www.gravatar.com/avatar/{{user.gravatar}}?d=monsterid&s=45-->
+    <img src="http://www.gravatar.com/avatar/{{user.gravatar}}" alt="username" class="img-circle">
   </div><!-- /thumbnail -->
-  <h1>Marcel Newman</h1>
-  <h3>Madrid, Spain</h3>
-  <h3>{{user.email}}</h3>
+  <h1>{{user.firstName}}</h1>
+  <h3>{{user.Country}}</h3>
+  <h3>{{user.userName}}</h3>
   <br>
   <div class="info-user">
-    <span aria-hidden="true" class="li_user fs1"></span>
-    <span aria-hidden="true" class="li_settings fs1"></span>
-    <span aria-hidden="true" class="li_mail fs1"></span>
-    <span aria-hidden="true" class="li_key fs1"></span>
+    <span aria-hidden="true" class="li_user fs1" title="My Account"></span>
+    <span aria-hidden="true" class="li_settings fs1" title="Settings"></span>
+    <span aria-hidden="true" class="li_mail fs1" title="Email"></span>
+    <span aria-hidden="true" class="li_key fs1" title="Change Password"></span>
   </div>
 </div>
