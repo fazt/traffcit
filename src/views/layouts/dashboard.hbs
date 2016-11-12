@@ -50,12 +50,14 @@
     <div class="container">
 	     {{{body}}}
     </div>
-    <script>
-      $(function() {
-        alertify.alert('Ready!');
-      });
-    </script>
     {{> site/footer_script}}
+    {{#if message }}
+      <script>
+      $(function() {
+        alertify.message("{{message}}");
+      });
+      </script>
+    {{/if}}
     {{> development/livereload}}
   </html>
 </body>

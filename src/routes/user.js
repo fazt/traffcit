@@ -24,7 +24,10 @@ router.post('/signin',passport.authenticate('local.signin',{
   successRedirect: '/user/dashboard',
   failureRedirect: '/user/signin',
   failureFlash: true
-}));
+}), function (req, res, next){
+  req.welcome = true;
+  next();
+});
 
 router.get('/signup', usercontroller.getSignup);
 

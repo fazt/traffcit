@@ -9,6 +9,8 @@ module.exports = {
 };
 
 function getDashboard (req, res) {
+  var message = null;
+  if (req.welcome) { message = 'Welcome'};
   disk.check('/', function(err, info) {
     var giga = 1024*1024*1024;
     var diskFree =(info.free/giga).toFixed(2);
@@ -20,9 +22,11 @@ function getDashboard (req, res) {
         available: diskInfo,
         free: diskFree,
         total: diskTotal
-      },
-      user:req.user
-    });
+      }
+      , user: req.user
+      , message: message
+    }
+  );
   });
 }
 
