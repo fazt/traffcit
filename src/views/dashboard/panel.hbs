@@ -16,22 +16,7 @@
     <div class="col-sm-3 col-lg-3">
 
   <!-- LOCAL TIME BLOCK -->
-      <div class="half-unit">
-        <dtitle>Local Time</dtitle>
-        <hr>
-          <div class="clockcenter">
-            <digiclock>12:45:25</digiclock>
-          </div>
-  </div>
-
-  <!-- SERVER UPTIME -->
-  <div class="half-unit">
-        <dtitle>Server Uptime</dtitle>
-        <hr>
-        <div class="cont">
-      <p><img src="assets/img/up.png" alt=""> <bold>Up</bold> | 356ms.</p>
-    </div>
-  </div>
+      {{>blocks/block-time}}
 
     </div>
   </div><!-- /row -->
@@ -103,57 +88,17 @@
 
 <!-- GRAPH CHART - lineandbars.js file -->
     <div class="col-sm-3 col-lg-3">
-      <div class="dash-unit">
-      <dtitle>Other Information</dtitle>
-      <hr>
-      <div class="section-graph">
-        <div id="importantchart"></div>
-        <br>
-        <div class="graph-info">
-          <i class="graph-arrow"></i>
-          <span class="graph-info-big">634.39</span>
-          <span class="graph-info-small">+2.18 (3.71%)</span>
-        </div>
-      </div>
-  </div>
+      {{>blocks/block-other-info}}
     </div>
 
 <!-- LAST MONTH REVENUE -->
     <div class="col-sm-3 col-lg-3">
-      <div class="dash-unit">
-        <dtitle>Last Month Revenue</dtitle>
-        <hr>
-        <div class="cont">
-      <p><bold>$879</bold> | <ok>Approved</ok></p>
-      <br>
-      <p><bold>$377</bold> | Pending</p>
-      <br>
-      <p><bold>$156</bold> | <bad>Denied</bad></p>
-      <br>
-      <p><img src="/img/up-small.png" alt=""> 12% Compared Last Month</p>
-
-    </div>
-
-  </div>
+      {{> blocks/block-last-month }}
     </div>
 
 <!-- 30 DAYS STATS - CAROUSEL FLEXSLIDER -->
     <div class="col-sm-3 col-lg-3">
-      <div class="dash-unit">
-        <dtitle>Last 30 Days Stats</dtitle>
-        <hr>
-        <br>
-        <br>
-          <div class="flexslider">
-      <ul class="slides">
-        <li><img src="/img/slide01.png" alt="slider"></li>
-        <li><img src="/img/slide02.png" alt="slider"></li>
-      </ul>
-        </div>
-    <div class="cont">
-      <p>StatCounter Information</p>
-    </div>
-  </div>
+      {{> blocks/block-stats }}
     </div>
   </div><!-- /row -->
 
