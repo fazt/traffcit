@@ -55,6 +55,8 @@
     "oauth": "0.9.14",
     "passport": "0.3.2",
     "passport-local": "1.0.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "serve-favicon": "2.3.0",
     "socket.io": "1.5.0"
   },
@@ -63,6 +65,8 @@
     "npm": "3.10.6"
   },
   "devDependencies": {
+    "babel-loader": "^6.2.8",
+    "babel-preset-react": "^6.16.0",
     "chai": "3.5.0",
     "chai-http": "3.0.0",
     "eslint": "3.7.0",
@@ -74,7 +78,9 @@
     "gulp-notify": "2.2.0",
     "matchdep": "1.0.1",
     "mocha": "3.1.0",
+    "serialport": "^4.0.6",
     "supertest": "2.0.0",
-    "time-grunt": "1.4.0"
+    "time-grunt": "1.4.0",
+    "webpack": "^1.13.3"
   }
 }

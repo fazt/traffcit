@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background: #bdc3c7;
   font-family: 'Open Sans', sans-serif;
 }
 h1 {
@@ -23,7 +23,13 @@ h5 {
   margin-left: 5px;
 }
 .fnavbar {
-  background-color: #eee;
+  background-color: #2980b9;
+}
+.fnavbar a {
+  color: #eee;
+}
+.fnavbar a:hover {
+  color: black;
 }
 /***********BLOCKS & WRAPS***********/
 /*--- Dash Unit / Used in Dashboard page ---*/
@@ -36,7 +42,7 @@ h5 {
   height: 290px;
 }
 .dash-unit:hover {
-  background-color: #4f4f4f;
+  background-color: #ecf0f1;
   -moz-box-shadow: 3px 3px 2px 0px #151515;
   -webkit-box-shadow: 3px 3px 2px 0px #151515;
   box-shadow: 3px 3px 2px 0px #151515;
@@ -84,7 +90,7 @@ h5 {
   font-size: 15px;
   line-height: 2px;
   letter-spacing: 0px;
-  color: #b2c831;
+  color: #bdc3c7;
   padding-top: 10px;
   padding-left: 5px;
   margin-top: 2px;
@@ -125,7 +131,7 @@ h5 {
   height: 130px;
 }
 .half-unit:hover {
-  background-color: #4f4f4f;
+  background-color: #ecf0f1;
   -moz-box-shadow: 3px 3px 2px 0px #151515;
   -webkit-box-shadow: 3px 3px 2px 0px #151515;
   box-shadow: 3px 3px 2px 0px #151515;
@@ -178,7 +184,7 @@ h5 {
   margin-top: 30px;
 }
 .cont ok {
-  color: #b2c831;
+  color: #bdc3c7;
 }
 .cont bad {
   color: #fa1d2d;
@@ -219,12 +225,12 @@ h5 {
   color: #fff;
 }
 .progress-bar {
-  background-color: #b2c831;
+  background-color: #bdc3c7;
 }
 input[type=submit] {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
-  background: #b2c831;
+  background: #bdc3c7;
   color: #fff;
   border: none;
   padding: 8px 28px 10px 26px;
@@ -260,7 +266,7 @@ textarea {
 .info-user {
   text-align: center;
   font-size: 24px;
-  color: #b2c831;
+  color: #bdc3c7;
 }
 .fs1 {
   padding: 5px 5px 5px 5px;
@@ -572,6 +578,7 @@ digiclock {
   width: 150px;
   margin: 30px auto;
 }
+/**********Accordion Styling**********/
 /**********FooterWrap Section**********/
 #footerwrap {
   width: 100%;
@@ -588,3 +595,5 @@ digiclock {
   color: #000;
   font-size: 12px;
 }
+/***********FULLCALENDAR STYLE***********/
+/**********Media Styles**********/

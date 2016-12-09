@@ -2,7 +2,6 @@ import express from 'express';
 import csrf from 'csurf';
 import passport from 'passport';
 
-
 const router = express.Router();
 
 var usercontroller = require('../controllers/user.server.controller');
@@ -12,6 +11,7 @@ router.use(csrf());
 router.get('/dashboard',isLoggedIn, usercontroller.getDashboard);
 router.get('/map',isLoggedIn, usercontroller.getMap);
 router.get('/logout',isLoggedIn, usercontroller.getLogout);
+router.get('/create', usercontroller.getCreateUser);
 
 router.use('/',notLoggedIn,function(req,res,next) {
   next();
@@ -24,10 +24,7 @@ router.post('/signin',passport.authenticate('local.signin',{
   successRedirect: '/user/dashboard',
   failureRedirect: '/user/signin',
   failureFlash: true
-}), function (req, res, next){
-  req.welcome = true;
-  next();
-});
+}));
 
 router.get('/signup', usercontroller.getSignup);
 

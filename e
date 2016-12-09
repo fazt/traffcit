@@ -1,3 +1,7 @@
+video de login
+login con oauths
+
+
 http://codepen.io/samarkandiy/pen/JxnCF
 http://antonfisher.com/posts/2016/01/05/make-raspberry-pi-jenkins-traffic-light/
 three 41

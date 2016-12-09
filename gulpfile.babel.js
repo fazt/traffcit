@@ -41,7 +41,10 @@ gulp.task('start-dev',()=>{
       'NODE_ENV':'development'
     }
   }).on('restart',()=>{
-    gulp.src('src/server.js')
+    gulp.src([
+      'src/server.js',
+      '!src/public/**/*.js'
+    ])
       .pipe(livereload())
       .pipe(notify('Reloading page,please wait...'));
   });

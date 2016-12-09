@@ -6,10 +6,11 @@
     <title>Trafcity</title>
     {{!-- <link href="assets/css/bootstrap.css" rel="stylesheet"> --}}
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Le styles -->
     <link href="/css/main.css" rel="stylesheet">
-    <link href="/css/home.css" rel="stylesheet">
+    <!-- <link href="/css/home.css" rel="stylesheet"> -->
     <link href="/css/font-style.css" rel="stylesheet">
     <link href="/css/flexslider.css" rel="stylesheet">
     <link href="/css/alertify.min.css" rel="stylesheet">
@@ -51,13 +52,8 @@
 	     {{{body}}}
     </div>
     {{> site/footer_script}}
-    {{#if message }}
-      <script>
-      $(function() {
-        alertify.message("{{message}}");
-      });
-      </script>
-    {{/if}}
+
+
     {{> development/livereload}}
   </html>
 </body>

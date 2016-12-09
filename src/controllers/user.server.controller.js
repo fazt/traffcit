@@ -6,17 +6,17 @@ module.exports = {
   , getLogout: getLogout
   , getSignin: getSignin
   , getSignup: getSignup
+  , getCreateUser: getCreateUser
 };
 
 function getDashboard (req, res) {
-  var message = null;
-  if (req.welcome) { message = 'Welcome'};
   disk.check('/', function(err, info) {
     var giga = 1024*1024*1024;
     var diskFree =(info.free/giga).toFixed(2);
     var diskInfo = (info.available/giga).toFixed(2);
     var diskTotal = (info.total/giga).toFixed(2);
 
+    var uptime = process.uptime();
     res.render('dashboard/panel',{
       diskSpace:{
         available: diskInfo,
@@ -24,7 +24,7 @@ function getDashboard (req, res) {
         total: diskTotal
       }
       , user: req.user
-      , message: message
+      , uptime: uptime
     }
   );
   });
@@ -47,4 +47,8 @@ function getSignin(req,res,next) {
 function getSignup (req,res,next) {
   var messages = req.flash('error');
   res.render('user/signup',{csrfToken:req.csrfToken(),messages:messages,hasErrors:messages.length>0});
+}
+
+function getCreateUser(req, res, next) {
+  res.render('user/create-user', {crsToken: req.csrfToken()});
 }

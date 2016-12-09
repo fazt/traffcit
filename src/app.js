@@ -28,6 +28,10 @@ import http from 'http';
 const server = http.createServer(app);
 const io = require('socket.io')(server);
 
+io.on('connection', function() {
+  console.log('a new connection');
+});
+
 mongoose.connect('localhost:27017/traffcity');
 
 require('./config/passport');
