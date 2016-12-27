@@ -11,19 +11,44 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
-        <li><a href="manager.html"><i class="icon-folder-open icon-white"></i> File Manager</a></li>
-        <li><a href="calendar.html"><i class="icon-calendar icon-white"></i> Calendar</a></li>
-        <li><a href="tables.html"><i class="icon-th icon-white"></i> Tables</a></li>
+        <li class="active"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
+        <li><a href="manager.html"> <i class="fa fa-file" aria-hidden="true"></i> Registros</a></li>
+        <li><a href="calendar.html"><i class="fa fa-bell" aria-hidden="true"></i> Alertas</a></li>
+        <li><a href="tables.html"><i class="fa fa-video-camera" aria-hidden="true"></i> Transmision</a></li>
         {{#if login}}
-        <li><a href="/user/dashboard"><i class="icon-lock icon-white"></i> Account</a></li>
-        <li><a href="/user/logout"><i class="icon-user icon-white"></i> Logout</a></li>
+        <li><a href="/user/dashboard"><i class="fa fa-user" aria-hidden="true"></i> Mi Cuenta</a></li>
+        <li><a href="/user/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a></li>
         {{else}}
-        <li><a href="/user/signin"><i class="icon-lock icon-white"></i> Login</a></li>
-        <li><a href="/user/signup"><i class="icon-user icon-white"></i> SignUp</a></li>
+        <li><a href="/user/signin"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sesion</a></li>
+        <li><a href="/user/signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
         {{/if}}
 
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
+<script>
+$(document).ready( function() {
+  $('#myCarousel').carousel({
+    interval:   4000
+  });
+
+  var clickEvent = false;
+  $('#myCarousel').on('click', '.nav a', function() {
+    clickEvent = true;
+    $('.nav li').removeClass('active');
+    $(this).parent().addClass('active');
+  }).on('slid.bs.carousel', function(e) {
+    if(!clickEvent) {
+      var count = $('.nav').children().length -1;
+      var current = $('.nav li.active');
+      current.removeClass('active').next().addClass('active');
+      var id = parseInt(current.data('slide-to'));
+      if(count == id) {
+        $('.nav li').first().addClass('active');
+      }
+    }
+    clickEvent = false;
+  });
+});
+</script>

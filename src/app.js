@@ -1,5 +1,3 @@
-/*eslint no-undef: "error"*/
-/*eslint-env node*/
 import path from 'path';
 import express from 'express';
 import morgan from 'morgan';
@@ -19,18 +17,16 @@ import $config from './lib/config';
 
 import env from './lib/env';
 
+// impor routes
 import routes from './routes/index';
 import userRoutes from './routes/user';
 import devRoutes from './routes/dev';
+import serialRoute from './routes/serial';
 
 const app = express();
 import http from 'http';
 const server = http.createServer(app);
 const io = require('socket.io')(server);
-
-io.on('connection', function() {
-  console.log('a new connection');
-});
 
 mongoose.connect('localhost:27017/traffcity');
 
@@ -120,9 +116,12 @@ app.use(function(req,res,next) {
   next();
 });
 
+// routes
 app.use('/user',userRoutes);
 app.use('/',routes);
 app.use('/dev',devRoutes);
+// app.use('/serial',serialRoute );
+require('./routes/serial')(app, io);
 
 //inicializacion
 server.listen(app.get('port'),() => {

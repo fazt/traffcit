@@ -79,8 +79,8 @@ class App extends Component{
 
         <div className="col-sm-3 col-lg-3">
 
-            <div className="dash-unit">
-              <dtitle>Maps</dtitle>
+            <div className="dash-unit" style={{padding:"5px"}}>
+              <dtitle>Mapas</dtitle>
               <hr/>
               <div className="cont">
               <div className="info-user">
@@ -88,9 +88,8 @@ class App extends Component{
               </div>
               <br/>
               <div className="text">
-                <p>
-                  You can Search the rasberry points
-                </p>
+                <a href="/user/map" className="btn btn-block btn-primary">Mapas de Usuarios</a>
+                <a href="/traffic-light/map" className="btn btn-block btn-success">Mapas de Semaforos</a>
               </div>
             </div>
             </div>

@@ -272,7 +272,7 @@
 	            { className: 'col-sm-3 col-lg-3' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'dash-unit' },
+	              { className: 'dash-unit', style: { padding: "5px" } },
 	              _react2.default.createElement(
 	                'dtitle',
 	                null,
@@ -296,9 +296,14 @@
 	                  'div',
 	                  { className: 'text' },
 	                  _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'You can Search the rasberry points'
+	                    'a',
+	                    { href: '/user/map', className: 'btn btn-block btn-primary' },
+	                    'Mapas de Usuarios'
+	                  ),
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '/traffic-light/map', className: 'btn btn-block btn-success' },
+	                    'Mapas de Semaforos'
 	                  )
 	                )
 	              )

@@ -3,8 +3,8 @@ void setup() {
 
 }
 
-int i = 0;
+// int i = 0;
 void loop() {
-  Serial.println(i++);
-  delay(100);
+  Serial.println(1);
+  delay(1000);
 }

@@ -1,0 +1,62 @@
+<style media="screen">
+  body{
+    background-color: white;
+  }
+</style>
+<canvas id="myChart" width="200" height="200"></canvas>
+
+<script>
+  window.addEventListener('load', function () {
+
+    var socket = io('http://localhost:3000');
+    var init = 0;
+    socket.on('arduino data', function (serialdata) {
+      // console.log(data);
+      config.data.labels[init] = init + serialdata.valor;
+      config.data.datasets[0].data[init] = init + serialdata.valor;
+      myChart.update();
+      init++;
+    });
+
+    var ctx = document.getElementById("myChart");
+    var config = {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [{
+          label: '# de Serial Data',
+          data: [],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true
+            }
+          }]
+        }
+      }
+    };
+
+    var myChart = new Chart(ctx, config);
+  })
+</script>

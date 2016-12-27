@@ -1,56 +1,58 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div class="register-info-wraper">
+      <div id="register-info">
+
+        <div class="cont2">
+          <div class="thumbnail">
+            <img src="/img/traffcity.png" alt="Marcel Newman" class="img-circle">
+          </div><!-- /thumbnail -->
+          <h2>Fabián Napa</h2>
+        </div>
 
         <div class="row">
+          <div class="col-lg-3">
+            <div class="cont3">
+              <p><ok>Username:</ok> FaztJs</p>
+              <p><ok>Mail:</ok> fabian@trafcity.com</p>
+              <p><ok>Location:</ok> Ica, Perú</p>
+              <p><ok>Address:</ok> Blahblah Ave. 666</p>
+            </div>
+          </div>
 
-        	<div class="col-lg-6">
+          <div class="col-lg-3">
+            <div class="cont3">
+              <p><ok>Registered:</ok> April 9, 2010</p>
+              <p><ok>Last Login:</ok> January 29, 2013</p>
+              <p><ok>Phone:</ok> +34 619 663553</p>
+              <p><ok>Mobile</ok> +34 603 093384</p>
+            </div>
+          </div>
+        </div><!-- /inner row -->
+        <hr>
+        <div class="cont2">
+          <h2>Escoge tu Opción</h2>
+        </div>
+        <br>
 
-        		<div class="register-info-wraper">
-        			<div id="register-info">
-        				<div class="cont2">
-        					<div class="thumbnail">
-								<img src="assets/img/face.jpg" alt="Marcel Newman" class="img-circle">
-							</div><!-- /thumbnail -->
-							<h2>Fabián Napa</h2>
-        				</div>
-        				<div class="row">
-        					<div class="col-lg-3">
-        						<div class="cont3">
-        							<p><ok>Username:</ok> FaztJs</p>
-        							<p><ok>Mail:</ok> fabian@trafcity.com</p>
-        							<p><ok>Location:</ok> Ica, Perú</p>
-        							<p><ok>Address:</ok> Blahblah Ave. 666</p>
-        						</div>
-        					</div>
-        					<div class="col-lg-3">
-        						<div class="cont3">
-        						<p><ok>Registered:</ok> April 9, 2010</p>
-        						<p><ok>Last Login:</ok> January 29, 2013</p>
-        						<p><ok>Phone:</ok> +34 619 663553</p>
-        						<p><ok>Mobile</ok> +34 603 093384</p>
-        						</div>
-        					</div>
-        				</div><!-- /inner row -->
-						<hr>
-						<div class="cont2">
-							<h2>Choose Your Option</h2>
-						</div>
-						<br>
-							<div class="info-user2">
-								<span aria-hidden="true" class="li_user fs1"></span>
-								<span aria-hidden="true" class="li_settings fs1"></span>
-								<span aria-hidden="true" class="li_mail fs1"></span>
-								<span aria-hidden="true" class="li_key fs1"></span>
-								<span aria-hidden="true" class="li_lock fs1"></span>
-								<span aria-hidden="true" class="li_pen fs1"></span>
-							</div>
+        <div class="info-user2 text-center">
+          <span aria-hidden="true" class="li_user fs1"></span>
+          <span aria-hidden="true" class="li_settings fs1"></span>
+          <span aria-hidden="true" class="li_mail fs1"></span>
+          <span aria-hidden="true" class="li_key fs1"></span>
+          <span aria-hidden="true" class="li_lock fs1"></span>
+          <span aria-hidden="true" class="li_pen fs1"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-lg-6">
+
+    <div id="register-wraper">
 
 
-        			</div>
-        		</div>
 
-        	</div>
-
-        	<div class="col-sm-6 col-lg-6">
-        		<div id="register-wraper">
               {{#if hasErrors}}
                   <div class="alert alert-danger">
                     {{#each messages}}
@@ -59,13 +61,13 @@
                   </div>
               {{/if}}
         		    <form action="/user/signup" method="post" id="register-form" class="form">
-        		        <legend>User Register</legend>
+        		        <legend>Registro de Usuario</legend>
         		        <div class="body">
         		        	<!-- first name -->
-    		        		<label for="name">First name</label>
+    		        		<label for="name">Nombres</label>
     		        		<input name="firstName" class="form-control">
         		        	<!-- last name -->
-    		        		<label for="surname">Last name</label>
+    		        		<label for="surname">Apellidos</label>
     		        		<input name="lastName" class="form-control">
         		        	<!-- username -->
         		        	<label>Username</label>
@@ -74,7 +76,7 @@
         		        	<label>E-mail</label>
         		        	<input name="email" type="email" class="form-control" >
         		        	<!-- password -->
-        		        	<label>Password</label>
+        		        	<label>Contraseña</label>
         		        	<input name="password" type="password" class="form-control">
                       <!-- token -->
                       <input type="hidden" name="_csrf" value="{{csrfToken}}"/>
@@ -100,8 +102,8 @@
       	<div class="container">
       		<div class="row">
       			<div class="col-sm-12 col-lg-12">
-      			<p><img src="assets/img/logo.png" alt=""></p>
-      			<p>Blocks Dashboard Theme - Crafted With Love - Copyright 2013</p>
+      			<p><img src="/img/traffcity.png" alt=""></p>
+      			<p style="color:white">Blocks Dashboard Theme - Crafted With Love - Copyright 2013</p>
       			</div>
 
       		</div><!-- /row -->
