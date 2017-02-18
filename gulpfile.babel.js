@@ -18,7 +18,8 @@ gulp.task('less',()=>{
 gulp.task('eslint',()=>{
   return gulp.src([
     'src/**/*.js',
-    '!src/public/bower_componentes/**/*.js'
+    '!src/public/bower_componentes/**/*.js',
+    '!src/public/js/**/*.js'
   ])
   .pipe(eslint())
   .pipe(eslint.format())

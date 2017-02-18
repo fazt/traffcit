@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-app.get('/map', (req, res) => {
-  res.render('/')
+router.get('/map', (req, res) => {
+  res.render('traffic-light-map');
 });
+
+export default router;

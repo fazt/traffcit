@@ -1,0 +1,59 @@
+<video id="video" style="width:680;height:320px;" autoplay="true"></video>
+<div id="logger"></div>
+
+<canvas style="display:none;" id="preview"></canvas>
+
+<script>
+  var video = document.getElementById('video');
+  var logger = document.getElementById('logger');
+  var canvas = document.getElementById('preview');
+  var context = canvas.getContext('2d');
+
+  var socket = io();
+
+  socket.on('connect', function () {
+    log('connected');
+  });
+
+   socket.on('disconnect', function () {
+     log('disconnected');
+   });
+
+
+  canvas.width = 800;
+  canvas.height = 600;
+  context.width = 800;
+  context.height = 600;
+
+  function log(msg) {
+    logger.innerHTML += msg + '</br>';
+  };
+
+  function loadCam(stream) {
+    log('Broadcasting...');
+    video.src = window.URL.createObjectURL(stream);
+  }
+
+  function loadFail() {
+    log('camar no contectada, revisar camara.')
+  }
+
+  function viewVideo(context, video) {
+    context.drawImage(video, 0, 0, context.width, context.height);
+    socket.emit('stream', canvas.toDataURL('image/webp'));
+  }
+
+    navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia
+                              || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
+
+    if (navigator.getUserMedia) {
+      navigator.getUserMedia({video: true, audio: false}, loadCam, loadFail);
+    } else {
+      log('Cannot access to the camera');
+    };
+
+
+    setInterval(function () {
+      viewVideo(context, video)
+    }, 50)
+</script>

@@ -1,0 +1,70 @@
+<style media="screen">
+  body{
+    margin-top: 50px;
+  }
+  button{
+    display: block;
+    width: 80%;
+    padding: 30px;
+    margin: 15px;
+  }
+</style>
+
+<button id="test">is Connected?</button>
+<button id="red">Red</button>
+<button id="yellow">Yellow</button>
+<button id="green">Green</button>
+<button id="secuence">secuence</button>
+<button id="stopSecuence">stopSecuence</button>
+<button id="off">Alloff</button>
+<button id="on">AllOn</button>
+
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script>
+  var socket = io('/');
+  var $test = document.getElementById('test');
+  var $red = document.getElementById('red');
+  var $yellow = document.getElementById('yellow');
+  var $green = document.getElementById('green');
+  var $secuence = document.getElementById('secuence');
+  var $stopSecuence = document.getElementById('stopSecuence');
+  var $off = document.getElementById('off');
+  var $on = document.getElementById('on');
+
+  socket.on('board:ready', function () {
+    console.log('board:ready');
+  });
+
+  socket.on('hardware:connected', function () {
+    console.log('hardware:connected');
+  });
+  socket.on('hardware:not_connected_yet', function () {
+    console.log('hardware:not_connected_yet');
+  });
+
+  $test.addEventListener('click', function () {
+    socket.emit('hardware:testConnection');
+  });
+
+  $red.addEventListener('click', function () {
+    socket.emit('client:red');
+  });
+  $green.addEventListener('click', function () {
+    socket.emit('client:green');
+  });
+  $yellow.addEventListener('click', function () {
+    socket.emit('client:yellow');
+  });
+  $secuence.addEventListener('click', function () {
+    socket.emit('client:secuence');
+  });
+  $stopSecuence.addEventListener('click', function () {
+    socket.emit('client:stopSecuence');
+  });
+  $off.addEventListener('click', function () {
+    socket.emit('client:off');
+  });
+  $on.addEventListener('click', function () {
+    socket.emit('client:on');
+  });
+</script>

@@ -1,0 +1,27 @@
+<img src="" id="frame" style="width:800px; height:600px"/>
+<div id="logger"></div>
+
+<script>
+  window.addEventListener('load', function () {
+    var socket = io();
+    var img = document.getElementById('frame');
+
+    socket.on('connect', function () {
+      log('connected');
+    });
+
+    socket.on('disconnect', function () {
+      log('disconnected');
+    });
+
+    socket.on('stream', function(data) {
+      img.src = data;
+    });
+
+    /* END SOCKET.IO */
+
+    function log(message) {
+       logger.innerHTML = logger.innerHTML + message + "<br/>";
+    };
+  });
+</script>

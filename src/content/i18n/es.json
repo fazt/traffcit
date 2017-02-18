@@ -1,0 +1,14 @@
+{
+  "site": {
+    "language": "es",
+    "title": "Traffcit - Español",
+    "meta":   {
+      "abstract": "A platform to control traffic light control",
+      "description": "A platform to control traffic light control",
+      "keywordws": "Javascript, Nodejs, Arduino"
+    }
+  },
+  "Home": {
+    "welcome": "Bienvenidos a Traffcit"
+  }
+}

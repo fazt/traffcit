@@ -11,7 +11,6 @@ import flash from 'connect-flash';
 import validator from 'express-validator';
 var MongoStore = require('connect-mongo')(session);
 
-
 import hbsHelpers from './lib/handlebars';
 import $config from './lib/config';
 
@@ -20,13 +19,16 @@ import env from './lib/env';
 // impor routes
 import routes from './routes/index';
 import userRoutes from './routes/user';
+import api from './routes/api';
 import devRoutes from './routes/dev';
-import serialRoute from './routes/serial';
+import traffic from './routes/traffic-light';
 
 const app = express();
 import http from 'http';
 const server = http.createServer(app);
 const io = require('socket.io')(server);
+
+var sockets = require('./sockets')(io);
 
 mongoose.connect('localhost:27017/traffcity');
 
@@ -44,6 +46,7 @@ app.set('x-powered-by',false);
 app.set('port',process.env.PORT || $config().serverPort || 3000);
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine',$config().views.engine);
+app.set('socketio', io);
 
 app.engine($config().views.engine,exphbs({
   extname: $config().views.extension,
@@ -78,36 +81,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*
- * Rutas
- * app.use([path],cb); usado para crear middlewares, ademas se puede definir middlewares hacia ciertas rutas
- * app.VERB(path,[cb...],cb); obtiene las variables que express tiene configurado
- * app.route(path).VERB([cb...],cb); usado para definir multiples middlewares a una ruta.
-   app.route('/').get(cb).post(cb)
- * app.param([name],cb); establece cierta funcionalidad a las rutas con el 'parametro'. app.param('userId',cb)
- *
- * Request - metodos utiles de peticiones HTTP
- * req.query contiene parametros convertidos a cadena
- * req.params contiene los parametros de la ruta
- * req.body usado para devolver el cuerpo de peticiones, esta propieda es incluida en 'body-parser'
- * req.param(name) devuelve el valor de un parametro, puede ser un query-string,una ruta o un JSON request body
- * req.path,req.host,req.ip la ruta actual de la peticiom,host name, y la ip remota
- * req.cookies en conjunto con cookieParser middleware devuelve las cookies enviadas por el user-agent
- *
- * Responds
- * res.status(code); establece status code HTTP
- * res.set(field,[value]); establece cabeceras HTTP
- * res.cookie(name,value,[options]); establece una cookie
- * res.redirect([status],url); redirecciona una peticion a una url,se puede agregar un statusCode,sino sera 302
- * res.send([body|status],[body]);configura las cabeceras correspondientes para enviar el cuerpo de respuesta
- * res.json([status|body],[body]);fuerza una respuesta JSON, en casos de no enviar un objeto como null o undefined
- * res.render(view,[locals],cb); renderiza una vista y envia una respuesta HTML
-*/
-
-/*
- * Request Routing
- * app.route(path).VERB(cb); or app.VERB(path,cb); VERB debe estar en minusculas
-*/
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use(function(req,res,next) {
@@ -118,20 +91,17 @@ app.use(function(req,res,next) {
 
 // routes
 app.use('/user',userRoutes);
+app.use('/api', api);
 app.use('/',routes);
 app.use('/dev',devRoutes);
-// app.use('/serial',serialRoute );
+app.use('/traffic-light',traffic);
 require('./routes/serial')(app, io);
+require('./routes/tfc_control')(app, io);
 
 //inicializacion
 server.listen(app.get('port'),() => {
   console.log('server on port ', app.get('port'));
   console.log('env: ',env().name);
 });
-
-io.on('connection',function(socket){
-  console.log('new user');
-});
-
 
 export default app;

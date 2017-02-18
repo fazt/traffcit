@@ -1,9 +1,7 @@
 ---
 production: &default
   serverPort: 3000
-  baseUrl: http://www.trafcity.io
-  site:
-    description: test
+  baseUrl: http://www.traffcit.io
   views:
     engine: .hbs
     extension: .hbs
@@ -16,7 +14,15 @@ production: &default
       compress: true
   languages:
     default: en
-    list: [en,es]
+    list: [en, es]
+  security:
+    secret: tr4ffcit.com
+  session:
+    cookieDomain: .traffcit.com
+    maxAge: 259200
+    cookiePrefix: 'mdSession_'
+    path: '/'
+    httpOnly: true
 
 stage: &stage
   <<: *default

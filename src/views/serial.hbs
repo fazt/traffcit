@@ -17,14 +17,15 @@
       myChart.update();
       init++;
     });
-
-    var ctx = document.getElementById("myChart");
+    var canvas = document.getElementById("myChart");
+    var ctx = canvas.getContext('2d');
+    
     var config = {
       type: 'line',
       data: {
         labels: [],
         datasets: [{
-          label: '# de Serial Data',
+          label: 'Serial Data',
           data: [],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',

@@ -1,23 +1,19 @@
-<h1 class="text-center">Alert Citizen</h1>
+  <h1 class="text-center">Alert Citizen</h1>
 
-<form action="/alert-citizen" method="post">
-  <textarea name="description" class="form-control" placeholder="Please, Insert a Description..."></textarea>
-  <input type="hidden" name="_csrf" value="{{crsfToken}}">
-  <button class="btn btn-primary btn-block" type="submit">Enviar Alerta</button>
-</form>
-
-<link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css"/>
-
-
-<div id="map-citizen"></div>
-
-<script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
-
-<script>
-  window.addEventListener('load',function() {
-    var map = L.map('map-citizen',{
-      center: [0, -23],
-      zoom: 3
-    });
-  });
-</script>
+  <form action="/alert-citizen" method="post">
+    <textarea
+      type="text"
+      name="title"
+      placeholder="Ingresa un titulo de tu Incidente"
+      class="form-control"
+      style="text-align:center;"
+      ></textarea>
+    <textarea
+      name="description"
+      placeholder="Please, Insert a Description..."
+      class="form-control"
+      style="text-align:center;"
+    ></textarea>
+    <input type="hidden" name="_csrf" value="{{crsfToken}}">
+    <button class="btn btn-primary btn-block" type="submit">Send Alert</button>
+  </form>

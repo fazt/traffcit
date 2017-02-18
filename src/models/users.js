@@ -9,7 +9,7 @@ var userSchema = new Schema({
   email:      {type:String,required:true},
   password:   {type:String,required:true},
   created:    {type: Date},
-  Country:    {type:String, default: 'Perú'},
+  country:    {type:String, default: 'Perú'},
   gravatar:   {type:String}
 });
 
